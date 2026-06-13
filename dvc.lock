@@ -23,3 +23,26 @@ stages:
       md5: f4c6cbf744f49b4b8f59c73b6919f3a1.dir
       size: 549216759
       nfiles: 3167
+  convert_soccer_player_detection:
+    cmd: python -m src.data.convert_soccer_player_detection --raw-dir
+      data/SoccerPlayerDetection_raw --out-dir data/SoccerPlayerDetection_coco
+      --sample-rate 1
+    deps:
+    - path: data/SoccerPlayerDetection_raw
+      hash: md5
+      md5: 23b85dd607a0674f53207fc6876c7e41.dir
+      size: 176357762
+      nfiles: 2024
+    - path: src/data/convert_soccer_player_detection.py
+      hash: md5
+      md5: 8a359ace99f517ac2ed58072f8bad41d
+      size: 5721
+    params:
+      params.yaml:
+        convert_soccer_player_detection.sample_rate: 1
+    outs:
+    - path: data/SoccerPlayerDetection_coco
+      hash: md5
+      md5: 974a808bff29c3beafa9056eae4a6c48.dir
+      size: 179160627
+      nfiles: 2020

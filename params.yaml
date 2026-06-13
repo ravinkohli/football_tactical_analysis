@@ -3,3 +3,7 @@ convert_issia:
   sample_rate: 5
   # Side length (px) of the box generated around each ball point annotation.
   ball_size: 20
+
+convert_soccer_player_detection:
+  # Keep every Nth annotated frame (1 = keep all provided frames).
+  sample_rate: 1

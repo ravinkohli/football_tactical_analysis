@@ -6,6 +6,7 @@ dependencies = [
     "dvc>=3.67.1",
     "mlflow>=3.13.0",
     "opencv-python>=4.13.0.92",
+    "scipy>=1.13.0",
     "torchmetrics>=1.9.0",
     "ultralytics>=8.4.66",
 ]

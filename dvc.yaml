@@ -15,3 +15,18 @@ stages:
       - convert_issia.ball_size
     outs:
       - data/issia_coco
+
+  convert_soccer_player_detection:
+    desc: Convert the Soccer Player Detection dataset (.mat + .jpg) to COCO format.
+    cmd: >-
+      python -m src.data.convert_soccer_player_detection
+      --raw-dir data/SoccerPlayerDetection_raw
+      --out-dir data/SoccerPlayerDetection_coco
+      --sample-rate ${convert_soccer_player_detection.sample_rate}
+    deps:
+      - src/data/convert_soccer_player_detection.py
+      - data/SoccerPlayerDetection_raw
+    params:
+      - convert_soccer_player_detection.sample_rate
+    outs:
+      - data/SoccerPlayerDetection_coco
