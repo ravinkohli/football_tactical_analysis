@@ -1,0 +1,6 @@
+outs:
+- md5: 91c38b1214049974136c9df4d7460951.dir
+  size: 326253190
+  nfiles: 13
+  hash: md5
+  path: issia_raw
