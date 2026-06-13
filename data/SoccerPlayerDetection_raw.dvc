@@ -1,0 +1,6 @@
+outs:
+- md5: 23b85dd607a0674f53207fc6876c7e41.dir
+  size: 176357762
+  nfiles: 2024
+  hash: md5
+  path: SoccerPlayerDetection_raw
