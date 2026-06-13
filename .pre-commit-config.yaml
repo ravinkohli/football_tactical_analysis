@@ -1,0 +1,26 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args: ["--markdown-linebreak-ext=md"]
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.11.10 # uv version - keep this comment for automation
+    hooks:
+      - id: uv-lock # ensure that lock file is up-to-date with pyproject.toml
+  - repo: local
+    hooks:
+      - id: ruff-format
+        name: "ruff-format"
+        entry: uv run ruff
+        args: ["format", "."]
+        language: system
+        types: [python]
+      - id: ruff-check
+        name: "ruff-check"
+        entry: uv run ruff
+        args: ["check", "--force-exclude"]  # https://github.com/astral-sh/ruff/issues/1220
+        language: system
+        types: [python]
