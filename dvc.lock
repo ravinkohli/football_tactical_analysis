@@ -1,0 +1,25 @@
+schema: '2.0'
+stages:
+  convert_issia:
+    cmd: python -m src.data.convert_issia --raw-dir data/issia_raw --out-dir
+      data/issia_coco --sample-rate 5 --ball-size 20
+    deps:
+    - path: data/issia_raw
+      hash: md5
+      md5: 91c38b1214049974136c9df4d7460951.dir
+      size: 326253190
+      nfiles: 13
+    - path: src/data/convert_issia.py
+      hash: md5
+      md5: c4f5d9e8b30e3e6358b2f2d31f17b6d5
+      size: 10861
+    params:
+      params.yaml:
+        convert_issia.ball_size: 20
+        convert_issia.sample_rate: 5
+    outs:
+    - path: data/issia_coco
+      hash: md5
+      md5: f4c6cbf744f49b4b8f59c73b6919f3a1.dir
+      size: 549216759
+      nfiles: 3167

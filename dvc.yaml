@@ -1,0 +1,17 @@
+stages:
+  convert_issia:
+    desc: Convert the raw ISSIA-CNR dataset (ViPER .xgtf + DivX .avi) to COCO format.
+    cmd: >-
+      python -m src.data.convert_issia
+      --raw-dir data/issia_raw
+      --out-dir data/issia_coco
+      --sample-rate ${convert_issia.sample_rate}
+      --ball-size ${convert_issia.ball_size}
+    deps:
+      - src/data/convert_issia.py
+      - data/issia_raw
+    params:
+      - convert_issia.sample_rate
+      - convert_issia.ball_size
+    outs:
+      - data/issia_coco

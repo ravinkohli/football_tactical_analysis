@@ -1,0 +1,5 @@
+convert_issia:
+  # Keep every Nth annotated frame when extracting images from the videos.
+  sample_rate: 5
+  # Side length (px) of the box generated around each ball point annotation.
+  ball_size: 20
